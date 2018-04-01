@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: wxishiko/ubuntu-wxwidgets-build:latest
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: make

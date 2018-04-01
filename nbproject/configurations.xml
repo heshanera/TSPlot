@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>TSGen.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +13,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>TSGen.cpp</itemPath>
+      <itemPath>TSgen.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -35,7 +38,19 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <commandLine>`wx-config --cxxflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <commandLine>`wx-config --libs`</commandLine>
+        </linkerTool>
       </compileType>
+      <item path="TSGen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSGen.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TSgen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +74,12 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="TSGen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSGen.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TSgen.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
