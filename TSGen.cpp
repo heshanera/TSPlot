@@ -2,17 +2,14 @@
  * File:   TSGen.cpp
  * Author: heshan
  * 
- * Created on April 1, 2018, 7:12 PM
+ * Created on April 1, 2018, 9:33 PM
  */
 
 #include "TSGen.h"
 
-TSGen::TSGen() {
+bool TSGen::OnInit()
+{
+    TSGenFrame *frame = new TSGenFrame();
+    frame->Show(true);
+    return true;
 }
-
-TSGen::TSGen(const TSGen& orig) {
-}
-
-TSGen::~TSGen() {
-}
-

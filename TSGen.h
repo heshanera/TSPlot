@@ -2,20 +2,17 @@
  * File:   TSGen.h
  * Author: heshan
  *
- * Created on April 1, 2018, 7:12 PM
+ * Created on April 1, 2018, 9:33 PM
  */
 
-#ifndef TSGEN_H
-#define TSGEN_H
+#ifndef TSGENFRAME_H
+#define TSGENFRAME_H
 
-class TSGen {
+#include "TSGenFrame.h"
+class TSGen : public wxApp
+{
 public:
-    TSGen();
-    TSGen(const TSGen& orig);
-    virtual ~TSGen();
-private:
-
+    virtual bool OnInit();
 };
 
-#endif /* TSGEN_H */
-
+#endif /* TSGENFRAME_H */

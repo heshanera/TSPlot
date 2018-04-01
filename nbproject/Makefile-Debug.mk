@@ -36,7 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/TSGen.o \
-	${OBJECTDIR}/TSgen.o \
+	${OBJECTDIR}/TSGenFrame.o \
 	${OBJECTDIR}/main.o
 
 
@@ -69,10 +69,10 @@ ${OBJECTDIR}/TSGen.o: TSGen.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGen.o TSGen.cpp
 
-${OBJECTDIR}/TSgen.o: TSgen.cpp
+${OBJECTDIR}/TSGenFrame.o: TSGenFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSgen.o TSgen.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGenFrame.o TSGenFrame.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

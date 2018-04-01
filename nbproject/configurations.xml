@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>TSGen.h</itemPath>
+      <itemPath>TSGenFrame.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -14,7 +15,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>TSGen.cpp</itemPath>
-      <itemPath>TSgen.cpp</itemPath>
+      <itemPath>TSGenFrame.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -49,7 +50,9 @@
       </item>
       <item path="TSGen.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSgen.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSGenFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSGenFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -78,7 +81,9 @@
       </item>
       <item path="TSGen.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSgen.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSGenFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TSGenFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
