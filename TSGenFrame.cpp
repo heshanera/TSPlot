@@ -7,9 +7,7 @@
 
 #include "TSGenFrame.h"
 
-TSGenFrame::TSGenFrame()
-    : wxFrame(NULL, wxID_ANY, "Hello World")
-{
+TSGenFrame::TSGenFrame() : wxFrame(NULL, wxID_ANY, "TSGen") {
     wxMenu *menuFile = new wxMenu;
     menuFile->Append(ID_Hello, "&Hello...\tCtrl-H",
                      "Help string shown in status bar for this menu item");
@@ -22,7 +20,7 @@ TSGenFrame::TSGenFrame()
     menuBar->Append(menuHelp, "&Help");
     SetMenuBar( menuBar );
     CreateStatusBar();
-    SetStatusText("Welcome to wxWidgets!");
+    SetStatusText("Time Series Generator!");
     Bind(wxEVT_MENU, &TSGenFrame::OnHello, this, ID_Hello);
     Bind(wxEVT_MENU, &TSGenFrame::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &TSGenFrame::OnExit, this, wxID_EXIT);
