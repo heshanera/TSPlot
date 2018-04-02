@@ -7,7 +7,7 @@
 
 #include "TimeSeries.h"
 #include <wx/sizer.h>
-#include "wxCharts/include/wx/charts/wxcharts.h"
+#include <wx/charts/wxcharts.h>
 
 
 TimeSeries::TimeSeries(const wxString& title, wxFrame *frame, wxStandardID wxID_ANY) {

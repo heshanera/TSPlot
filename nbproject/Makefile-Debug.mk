@@ -55,13 +55,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=wxCharts/libwxcharts.a
+LDLIBSOPTIONS=/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/libwxcharts.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: wxCharts/libwxcharts.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: /home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/libwxcharts.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -70,22 +70,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: ${OBJECTFILES}
 ${OBJECTDIR}/TSGen.o: TSGen.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGen.o TSGen.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGen.o TSGen.cpp
 
 ${OBJECTDIR}/TSGenFrame.o: TSGenFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGenFrame.o TSGenFrame.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSGenFrame.o TSGenFrame.cpp
 
 ${OBJECTDIR}/TimeSeries.o: TimeSeries.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
