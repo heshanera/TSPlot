@@ -55,11 +55,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=wxCharts/libwxcharts.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: wxCharts/libwxcharts.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

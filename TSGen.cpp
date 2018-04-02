@@ -6,6 +6,7 @@
  */
 
 #include "TSGen.h"
+#include "TimeSeries.h"
 
 bool TSGen::OnInit()
 {

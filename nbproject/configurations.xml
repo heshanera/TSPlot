@@ -45,6 +45,9 @@
           <commandLine>`wx-config --cxxflags`</commandLine>
         </ccTool>
         <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>wxCharts/libwxcharts.a</linkerLibFileItem>
+          </linkerLibItems>
           <commandLine>`wx-config --libs`</commandLine>
         </linkerTool>
       </compileType>
