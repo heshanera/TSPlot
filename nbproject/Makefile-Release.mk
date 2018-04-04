@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ChartLegendBox.o \
 	${OBJECTDIR}/TSGen.o \
 	${OBJECTDIR}/TSGenFrame.o \
 	${OBJECTDIR}/TimeSeries.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsgen ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/ChartLegendBox.o: ChartLegendBox.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
 
 ${OBJECTDIR}/TSGen.o: TSGen.cpp
 	${MKDIR} -p ${OBJECTDIR}

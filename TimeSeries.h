@@ -10,14 +10,14 @@
 
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/charts/wxcharts.h>
 
 class TimeSeries {
 public:
-    TimeSeries(const wxString& title, wxFrame *frame, wxStandardID wxID_ANY);
-    int load(wxVector<wxString> labels, wxVector<wxDouble> points1, wxVector<wxDouble> points2);
-private:
-    wxPanel* panel;
+    TimeSeries();
+    wxLineChartData load(wxVector<wxString> labels, std::string series1Name, wxVector<wxDouble> points1, std::string series2Name, wxVector<wxDouble> points2);
     
+private:  
 };
 
 #endif

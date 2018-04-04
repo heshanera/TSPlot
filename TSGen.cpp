@@ -8,9 +8,90 @@
 #include "TSGen.h"
 #include "TimeSeries.h"
 
-bool TSGen::OnInit()
-{
+bool TSGen::OnInit() {
     TSGenFrame *frame = new TSGenFrame();
     frame->Show(true);
+    
+//    wxVector<wxString> labels;
+//    for(int i = 0; i < 35; i++){
+//        int val = 1;
+//        labels.push_back(std::to_string(val));
+//        val++;
+//    }
+//    
+//
+//    wxVector<wxDouble> points1;
+//    points1.push_back(3);
+//    points1.push_back(-2.5);
+//    points1.push_back(-1.2);
+//    points1.push_back(3);
+//    points1.push_back(6);
+//    points1.push_back(5);
+//    points1.push_back(1);
+//    points1.push_back(3);
+//    points1.push_back(-2.5);
+//    points1.push_back(-1.2);
+//    points1.push_back(3);
+//    points1.push_back(6);
+//    points1.push_back(5);
+//    points1.push_back(1);
+//    points1.push_back(3);
+//    points1.push_back(-2.5);
+//    points1.push_back(-1.2);
+//    points1.push_back(3);
+//    points1.push_back(6);
+//    points1.push_back(5);
+//    points1.push_back(1);
+//    points1.push_back(3);
+//    points1.push_back(-2.5);
+//    points1.push_back(-1.2);
+//    points1.push_back(3);
+//    points1.push_back(6);
+//    points1.push_back(5);
+//    points1.push_back(1);
+//    
+//    
+//    
+//
+//    wxVector<wxDouble> points2;
+//    points2.push_back(1);
+//    points2.push_back(-1.33);
+//    points2.push_back(2.5);
+//    points2.push_back(7);
+//    points2.push_back(3);
+//    points2.push_back(-1.8);
+//    points2.push_back(0.4);
+//    points2.push_back(1);
+//    points2.push_back(-1.33);
+//    points2.push_back(2.5);
+//    points2.push_back(7);
+//    points2.push_back(3);
+//    points2.push_back(-1.8);
+//    points2.push_back(0.4);
+//    points2.push_back(1);
+//    points2.push_back(-1.33);
+//    points2.push_back(2.5);
+//    points2.push_back(7);
+//    points2.push_back(3);
+//    points2.push_back(-1.8);
+//    points2.push_back(0.4);
+//    points2.push_back(1);
+//    points2.push_back(-1.33);
+//    points2.push_back(2.5);
+//    points2.push_back(7);
+//    points2.push_back(3);
+//    points2.push_back(-1.8);
+//    points2.push_back(0.4);
+//    points2.push_back(1);
+//    points2.push_back(-1.33);
+//    points2.push_back(2.5);
+//    points2.push_back(7);
+//    points2.push_back(3);
+//    points2.push_back(-1.8);
+//    points2.push_back(0.4);
+    
+//    frame->loadTimeSeries(labels, "series 1", points1, "series 2", points2);
+    
+    
     return true;
 }
