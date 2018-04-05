@@ -17,6 +17,7 @@ ChartLegendBox::ChartLegendBox(wxWindow *parent,
                                      long style)
     : wxControl(parent, id, pos, size, style)
 {
+    
     SetBackgroundStyle(wxBG_STYLE_PAINT);
     SetBackgroundColour(*wxWHITE);
 
@@ -24,9 +25,12 @@ ChartLegendBox::ChartLegendBox(wxWindow *parent,
     for (size_t i = 0; i < items.size(); ++i)
     {
         m_lines.push_back(
-            wxChartLegendLine(items[i].GetColor(), items[i].GetLabel(), 
-                m_options.GetLegendLineOptions())
-            );
+            wxChartLegendLine(
+                items[i].GetColor(), 
+                items[i].GetLabel(), 
+                m_options.GetLegendLineOptions()
+            )
+        );
     }
     
     parent->GetWindowBorderSize();
@@ -55,7 +59,7 @@ void ChartLegendBox::OnPaint(wxPaintEvent &evt)
         wxDouble x = 1;
         for (size_t i = 0; i < m_lines.size(); ++i)
         {
-            m_lines[i].SetPosition(x, 0);
+            m_lines[i].SetPosition(x, 5);
             x = (m_lines[i].GetSize().GetHeight() + 5) + m_lines[1].GetSize().GetWidth() + 10;
         }
 

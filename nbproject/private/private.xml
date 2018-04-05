@@ -10,10 +10,12 @@
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TSGenFrame.cpp</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/main.cpp</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TimeSeries.cpp</file>
+            <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/ChartLegendBox.h</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TimeSeries.h</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TSGen.h</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TSGenFrame.h</file>
             <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/TSGen.cpp</file>
+            <file>file:/home/heshan/Projects/NetBeansProjects/TSGen/ChartLegendBox.cpp</file>
         </group>
     </open-files>
 </project-private>

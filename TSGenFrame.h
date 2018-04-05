@@ -19,22 +19,27 @@ class TSGenFrame : public wxFrame
 {
 public:
     TSGenFrame();
-    int loadTimeSeriesData(/*
+    int loadWidgets();
+    int loadTimeSeriesData(
         wxVector<wxString> labels, 
         std::string series1Name, 
         wxVector<wxDouble> points1, 
         std::string series2Name, 
-        wxVector<wxDouble> points2*/
+        wxVector<wxDouble> points2
     );
 
 private:
     void OnHello(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     void OnAbout(wxCommandEvent& event);
-    void resizeChart(wxSizeEvent& event);
+    int loadTimeSeries1Data();
+    int loadTimeSeries2Data();
     
     wxPanel *panel;
     wxLineChartCtrl* lineChartCtrl;
+    wxLineChartCtrl* lineChartSeries1Ctrl;
+    wxLineChartCtrl* lineChartSeries2Ctrl;
+    
     ChartLegendBox* legendCtrl;
     
 };
