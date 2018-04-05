@@ -26,11 +26,6 @@ int TSGenFrame::loadWidgets(){
     wxFlexGridSizer *toolBar = new wxFlexGridSizer(1, 5, 0, 0);
     toolBar->AddGrowableCol(2, 1);
     
-//    wxColour btnColor;
-//    btnColor.Set(wxT("#000000"));
-    
-    
-    
     wxButton *addSeriesBtn = new wxButton(panel, wxID_ANY);
     addSeriesBtn->SetBitmap(wxBitmap("bitmaps/add.bmp",wxBITMAP_DEFAULT_TYPE));
     addSeriesBtn->SetMaxSize(wxSize(45,45));
@@ -53,9 +48,6 @@ int TSGenFrame::loadWidgets(){
     toolBar->AddSpacer(20);
     toolBar->Add(settingsBtn, 0);
     
-    
-//    loadTimeSeriesData();
-    
     wxBoxSizer *timeSeriesBar = new wxBoxSizer(wxHORIZONTAL);
     timeSeriesBar->Add(lineChartSeries1Ctrl, 1, wxRIGHT | wxBOTTOM | wxEXPAND, 5);
     timeSeriesBar->Add(lineChartSeries2Ctrl, 1, wxLEFT | wxBOTTOM | wxEXPAND, 5);
@@ -64,7 +56,6 @@ int TSGenFrame::loadWidgets(){
     flexGrid->Add(timeSeriesBar, 1, wxEXPAND);
     flexGrid->Add(lineChartCtrl, 1, wxEXPAND);
     flexGrid->Add(legendCtrl, 1, wxEXPAND);
-    
 
     flexGrid->AddGrowableRow(1, 1);
     flexGrid->AddGrowableRow(2, 1);
@@ -73,6 +64,10 @@ int TSGenFrame::loadWidgets(){
     hbox->Add(flexGrid, 1, wxALL | wxEXPAND, 15);
     panel->SetSizer(hbox);
     Centre();
+    
+    Bind(wxEVT_BUTTON, &TSGenFrame::clearData, this, wxID_ANY);
+    
+    return 0;    
 }
 
 int TSGenFrame::loadTimeSeriesData(
@@ -130,29 +125,40 @@ int TSGenFrame::loadTimeSeriesData(
     );
     
     ////////////////////////////////////////////////////
-    
-    
-    
+
     return 0;
 }
 
-void TSGenFrame::OnExit(wxCommandEvent& event) {
-    Close(true);
-}
-
-void TSGenFrame::OnAbout(wxCommandEvent& event) {
-    wxMessageBox("This is a wxWidgets Hello World example",
-                 "About Hello World", wxOK | wxICON_INFORMATION);
-}
-
-void TSGenFrame::OnHello(wxCommandEvent& event) {
-    wxLogMessage("Hello world from wxWidgets!");
-}
-
-//void TSGenFrame::showHideSeries1(wxCommandEvent & event) {
-//    std::cout<<"click!"<<"\n";
+//void TSGenFrame::OnExit(wxCommandEvent& event) {
+//    Close(true);
 //}
 //
-//void TSGenFrame::showHideSeries2(wxCommandEvent & event) {
-//    std::cout<<"click2!"<<"\n";
+//void TSGenFrame::OnAbout(wxCommandEvent& event) {
+//    wxMessageBox("This is a wxWidgets Hello World example",
+//                 "About Hello World", wxOK | wxICON_INFORMATION);
 //}
+//
+//void TSGenFrame::OnHello(wxCommandEvent& event) {
+//    wxLogMessage("Hello world from wxWidgets!");
+//}
+
+void TSGenFrame::clearData(wxCommandEvent& event) {
+    std::cout<<"click remove!"<<"\n";
+    
+    wxVector<wxString> labels;
+    labels.push_back("");    
+    wxVector<wxDouble> points1;
+    points1.push_back(0);
+    wxVector<wxDouble> points2;
+    points2.push_back(0);
+    loadTimeSeriesData(labels, "-", points1, "-", points2);
+//    lineChartCtrl->Refresh();
+//    
+//    this->Refresh();
+    lineChartCtrl->Refresh();
+    lineChartCtrl->Update();
+}
+
+wxBEGIN_EVENT_TABLE(TSGenFrame, wxFrame)
+    EVT_BUTTON(CLEAR_BUTTON, TSGenFrame::clearData)
+wxEND_EVENT_TABLE()

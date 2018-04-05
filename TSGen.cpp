@@ -19,11 +19,11 @@ bool TSGen::OnInit() {
     }
     
     wxVector<wxDouble> points1;
-//    points1.push_back(3);
-//    points1.push_back(-2.5);
-//    points1.push_back(-1.2);
-//    points1.push_back(3);
-//    points1.push_back(6);
+    points1.push_back(3);
+    points1.push_back(-2.5);
+    points1.push_back(-1.2);
+    points1.push_back(3);
+    points1.push_back(6);
 //    points1.push_back(5);
 //    points1.push_back(1);
 //    points1.push_back(3);
@@ -49,11 +49,11 @@ bool TSGen::OnInit() {
 //    points1.push_back(1);
     
     wxVector<wxDouble> points2;
-//    points2.push_back(1);
-//    points2.push_back(-1.33);
-//    points2.push_back(2.5);
-//    points2.push_back(7);
-//    points2.push_back(3);
+    points2.push_back(1);
+    points2.push_back(-1.33);
+    points2.push_back(2.5);
+    points2.push_back(7);
+    points2.push_back(3);
 //    points2.push_back(-1.8);
 //    points2.push_back(0.4);
 //    points2.push_back(1);

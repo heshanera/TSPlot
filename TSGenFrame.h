@@ -29,11 +29,11 @@ public:
     );
 
 private:
-    void OnHello(wxCommandEvent& event);
-    void OnExit(wxCommandEvent& event);
-    void OnAbout(wxCommandEvent& event);
-    int loadTimeSeries1Data();
-    int loadTimeSeries2Data();
+//    void OnHello(wxCommandEvent& event);
+//    void OnExit(wxCommandEvent& event);
+//    void OnAbout(wxCommandEvent& event);
+    void clearData(wxCommandEvent& event);
+    
     
     wxPanel *panel;
     wxLineChartCtrl* lineChartCtrl;
@@ -41,11 +41,14 @@ private:
     wxLineChartCtrl* lineChartSeries2Ctrl;
     
     ChartLegendBox* legendCtrl;
+
+    wxDECLARE_EVENT_TABLE();
     
 };
 enum
 {
-    ID_Hello = 1
+    ID_Hello = 1,
+    CLEAR_BUTTON = 2
 };
 
 #endif /* TSGEN_H */
