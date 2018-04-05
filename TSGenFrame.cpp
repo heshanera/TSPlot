@@ -23,7 +23,7 @@ int TSGenFrame::loadWidgets(){
     wxBoxSizer *hbox = new wxBoxSizer(wxHORIZONTAL);
     wxFlexGridSizer *flexGrid = new wxFlexGridSizer(4, 1, 5, 25);
 
-    wxFlexGridSizer *toolBar = new wxFlexGridSizer(1, 4, 0, 0);
+    wxFlexGridSizer *toolBar = new wxFlexGridSizer(1, 5, 0, 0);
     toolBar->AddGrowableCol(2, 1);
     
 //    wxColour btnColor;
@@ -35,6 +35,10 @@ int TSGenFrame::loadWidgets(){
     addSeriesBtn->SetBitmap(wxBitmap("bitmaps/add.bmp",wxBITMAP_DEFAULT_TYPE));
     addSeriesBtn->SetMaxSize(wxSize(45,45));
     
+    wxButton *removeSeriesBtn = new wxButton(panel, wxID_ANY);
+    removeSeriesBtn->SetBitmap(wxBitmap("bitmaps/remove.bmp",wxBITMAP_DEFAULT_TYPE));
+    removeSeriesBtn->SetMaxSize(wxSize(45,45));
+    
     wxButton *refreshSeriesBtn = new wxButton(panel, wxID_ANY);
     refreshSeriesBtn->SetBitmap(wxBitmap("bitmaps/refresh.bmp",wxBITMAP_DEFAULT_TYPE));
     refreshSeriesBtn->SetMaxSize(wxSize(45,45));
@@ -43,8 +47,9 @@ int TSGenFrame::loadWidgets(){
     settingsBtn->SetBitmap(wxBitmap("bitmaps/settings.bmp",wxBITMAP_DEFAULT_TYPE));
     settingsBtn->SetMaxSize(wxSize(45,45));
     
-    toolBar->Add(addSeriesBtn, 0);
-    toolBar->Add(refreshSeriesBtn, 0);
+    toolBar->Add(addSeriesBtn, 0, wxRIGHT , 5);
+    toolBar->Add(removeSeriesBtn, 0, wxRIGHT , 5);
+    toolBar->Add(refreshSeriesBtn, 0, wxRIGHT , 5);
     toolBar->AddSpacer(20);
     toolBar->Add(settingsBtn, 0);
     

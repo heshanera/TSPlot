@@ -19,17 +19,17 @@ wxLineChartData TimeSeries::load(wxVector<wxString> labels,std::string series1Na
     
     wxLineChartDataset::ptr dataset1(new wxLineChartDataset(
         series1Name, 
-        wxColor(220, 220, 220), 
+        wxColor(40, 153, 193), 
         wxColor(255, 255, 255), 
-        wxColor(220, 220, 220, 0x33), 
+        wxColor(40, 153, 193, 0x11), 
         points1));  
     chartData.AddDataset(dataset1);
     
     wxLineChartDataset::ptr dataset2(new wxLineChartDataset(
         series2Name, 
-        wxColor(151, 187, 205),
+        wxColor(253, 56, 50),
         wxColor(255, 255, 255), 
-        wxColor(151, 187, 205, 0x33), 
+        wxColor(253, 56, 50, 0x11), 
         points2));
     chartData.AddDataset(dataset2);
 
