@@ -5,16 +5,18 @@
  * Created on April 1, 2018, 9:33 PM
  */
 
-#include "TSGen.h"
+#include "TSAnalyzer.h"
 #include "TimeSeries.h"
 
 bool TSGen::OnInit() {
     TSGenFrame *frame = new TSGenFrame();
     
     wxVector<wxString> labels;
-    for(int i = 0; i < 35; i++){
+    for(int i = 0; i < 35; i+=3){
         int val = 1;
         labels.push_back(std::to_string(val));
+        labels.push_back("");
+        labels.push_back("");
         val++;
     }
     
@@ -24,13 +26,13 @@ bool TSGen::OnInit() {
     points1.push_back(-1.2);
     points1.push_back(3);
     points1.push_back(6);
-//    points1.push_back(5);
-//    points1.push_back(1);
-//    points1.push_back(3);
-//    points1.push_back(-2.5);
-//    points1.push_back(-1.2);
-//    points1.push_back(3);
-//    points1.push_back(6);
+    points1.push_back(5);
+    points1.push_back(1);
+    points1.push_back(3);
+    points1.push_back(-2.5);
+    points1.push_back(-1.2);
+    points1.push_back(3);
+    points1.push_back(6);
 //    points1.push_back(5);
 //    points1.push_back(1);
 //    points1.push_back(3);
@@ -54,13 +56,13 @@ bool TSGen::OnInit() {
     points2.push_back(2.5);
     points2.push_back(7);
     points2.push_back(3);
-//    points2.push_back(-1.8);
-//    points2.push_back(0.4);
-//    points2.push_back(1);
-//    points2.push_back(-1.33);
-//    points2.push_back(2.5);
-//    points2.push_back(7);
-//    points2.push_back(3);
+    points2.push_back(-1.8);
+    points2.push_back(0.4);
+    points2.push_back(1);
+    points2.push_back(-1.33);
+    points2.push_back(2.5);
+    points2.push_back(7);
+    points2.push_back(3);
 //    points2.push_back(-1.8);
 //    points2.push_back(0.4);
 //    points2.push_back(1);

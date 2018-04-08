@@ -8,7 +8,7 @@
 #ifndef TSGENFRAME_H
 #define TSGENFRAME_H
 
-#include "TSGenFrame.h"
+#include "TSAnalyzerFrame.h"
 class TSGen : public wxApp
 {
 public:

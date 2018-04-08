@@ -5,8 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>ChartLegendBox.h</itemPath>
-      <itemPath>TSGen.h</itemPath>
-      <itemPath>TSGenFrame.h</itemPath>
+      <itemPath>TSAnalyzer.h</itemPath>
+      <itemPath>TSAnalyzerFrame.h</itemPath>
       <itemPath>TimeSeries.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -17,8 +17,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>ChartLegendBox.cpp</itemPath>
-      <itemPath>TSGen.cpp</itemPath>
-      <itemPath>TSGenFrame.cpp</itemPath>
+      <itemPath>TSAnalyzer.cpp</itemPath>
+      <itemPath>TSAnalyzerFrame.cpp</itemPath>
       <itemPath>TimeSeries.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -60,13 +60,13 @@
       </item>
       <item path="ChartLegendBox.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSGen.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSAnalyzer.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSGen.h" ex="false" tool="3" flavor2="0">
+      <item path="TSAnalyzer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSGenFrame.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSAnalyzerFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSGenFrame.h" ex="false" tool="3" flavor2="0">
+      <item path="TSAnalyzerFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -99,13 +99,13 @@
       </item>
       <item path="ChartLegendBox.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSGen.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSAnalyzer.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSGen.h" ex="false" tool="3" flavor2="0">
+      <item path="TSAnalyzer.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSGenFrame.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSAnalyzerFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSGenFrame.h" ex="false" tool="3" flavor2="0">
+      <item path="TSAnalyzerFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>

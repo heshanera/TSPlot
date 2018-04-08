@@ -5,10 +5,10 @@
  * Created on April 1, 2018, 9:13 PM
  */
 
-#include "TSGenFrame.h"
+#include "TSAnalyzerFrame.h"
 #include "TimeSeries.h"
 #include "ChartLegendBox.h"
-#include "TSGen.h"
+#include "TSAnalyzer.h"
 
 #include <wx/sizer.h>
 #include <wx/grid.h>

@@ -5,7 +5,7 @@
  * Created on April 1, 2018, 2:34 PM
  */
 
-#include "TSGen.h"
+#include "TSAnalyzer.h"
 
 wxIMPLEMENT_APP(TSGen);
     
