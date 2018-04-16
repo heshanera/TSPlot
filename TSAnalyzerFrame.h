@@ -40,6 +40,8 @@ private:
     wxLineChartCtrl* lineChartSeries1Ctrl;
     wxLineChartCtrl* lineChartSeries2Ctrl;
     
+    wxLineChart * chart;
+    
     ChartLegendBox* legendCtrl;
 
     wxDECLARE_EVENT_TABLE();

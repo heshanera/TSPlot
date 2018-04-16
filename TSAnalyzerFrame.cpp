@@ -89,7 +89,7 @@ int TSGenFrame::loadTimeSeriesData(
         panel, wxID_ANY, 
         chartData, wxDefaultPosition, 
         wxDefaultSize, wxBORDER_RAISED
-    );
+    );    
 
     wxSize * size;
     size = new wxSize(-1,30);
