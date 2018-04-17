@@ -56,13 +56,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/libwxcharts.a
+LDLIBSOPTIONS=wxCharts/libwxcharts.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: /home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/libwxcharts.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: wxCharts/libwxcharts.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
@@ -71,27 +71,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: ${OBJECTFILES}
 ${OBJECTDIR}/ChartLegendBox.o: ChartLegendBox.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
 
 ${OBJECTDIR}/TSAnalyzer.o: TSAnalyzer.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzer.o TSAnalyzer.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzer.o TSAnalyzer.cpp
 
 ${OBJECTDIR}/TSAnalyzerFrame.o: TSAnalyzerFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzerFrame.o TSAnalyzerFrame.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzerFrame.o TSAnalyzerFrame.cpp
 
 ${OBJECTDIR}/TimeSeries.o: TimeSeries.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

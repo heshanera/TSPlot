@@ -45,13 +45,13 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/include</pElem>
+            <pElem>/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include</pElem>
           </incDir>
           <commandLine>`wx-config --cxxflags`</commandLine>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>/home/heshan/Projects/NetBeansProjects/Libraries/wxCharts/libwxcharts.a</linkerLibFileItem>
+            <linkerLibFileItem>wxCharts/libwxcharts.a</linkerLibFileItem>
           </linkerLibItems>
           <commandLine>`wx-config --libs`</commandLine>
         </linkerTool>

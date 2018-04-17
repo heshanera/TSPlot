@@ -46,45 +46,45 @@ int TSGenFrame::loadWidgets(){
     
     wxButton *addSeries1Btn = new wxButton(panel, ADD_BUTTON_1);
     addSeries1Btn->SetBitmap(wxBitmap("bitmaps/add.bmp",wxBITMAP_DEFAULT_TYPE));
-    addSeries1Btn->SetMaxSize(wxSize(45,45));
+    addSeries1Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *removeSeries1Btn = new wxButton(panel, CLEAR_BUTTON_1);
     removeSeries1Btn->SetBitmap(wxBitmap("bitmaps/remove.bmp",wxBITMAP_DEFAULT_TYPE));
-    removeSeries1Btn->SetMaxSize(wxSize(45,45));
+    removeSeries1Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *refreshSeries1Btn = new wxButton(panel, REFRESH_BUTTON_1);
     refreshSeries1Btn->SetBitmap(wxBitmap("bitmaps/refresh.bmp",wxBITMAP_DEFAULT_TYPE));
-    refreshSeries1Btn->SetMaxSize(wxSize(45,45));
+    refreshSeries1Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *settings1Btn = new wxButton(panel, RENAME_BUTTON_1);
-    settings1Btn->SetBitmap(wxBitmap("bitmaps/settings.bmp",wxBITMAP_DEFAULT_TYPE));
-    settings1Btn->SetMaxSize(wxSize(45,45));
+    settings1Btn->SetBitmap(wxBitmap("bitmaps/rename.bmp",wxBITMAP_DEFAULT_TYPE));
+    settings1Btn->SetMaxSize(wxSize(35,35));
     
-    toolBar1->Add(addSeries1Btn, 0, wxRIGHT , 5);
-    toolBar1->Add(removeSeries1Btn, 0, wxRIGHT , 5);
-    toolBar1->Add(refreshSeries1Btn, 0, wxRIGHT , 5);
+    toolBar1->Add(addSeries1Btn, 0, wxRIGHT , 3);
+    toolBar1->Add(removeSeries1Btn, 0, wxRIGHT , 3);
+    toolBar1->Add(refreshSeries1Btn, 0, wxRIGHT , 3);
     toolBar1->Add(settings1Btn, 0);
     
     wxButton *addSeries2Btn = new wxButton(panel, ADD_BUTTON_2);
     addSeries2Btn->SetBitmap(wxBitmap("bitmaps/add.bmp",wxBITMAP_DEFAULT_TYPE));
-    addSeries2Btn->SetMaxSize(wxSize(45,45));
+    addSeries2Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *removeSeries2Btn = new wxButton(panel, CLEAR_BUTTON_2);
     removeSeries2Btn->SetBitmap(wxBitmap("bitmaps/remove.bmp",wxBITMAP_DEFAULT_TYPE));
-    removeSeries2Btn->SetMaxSize(wxSize(45,45));
+    removeSeries2Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *refreshSeries2Btn = new wxButton(panel, REFRESH_BUTTON_2);
     refreshSeries2Btn->SetBitmap(wxBitmap("bitmaps/refresh.bmp",wxBITMAP_DEFAULT_TYPE));
-    refreshSeries2Btn->SetMaxSize(wxSize(45,45));
+    refreshSeries2Btn->SetMaxSize(wxSize(35,35));
     
     wxButton *settings2Btn = new wxButton(panel, RENAME_BUTTON_2);
-    settings2Btn->SetBitmap(wxBitmap("bitmaps/settings.bmp",wxBITMAP_DEFAULT_TYPE));
-    settings2Btn->SetMaxSize(wxSize(45,45));
+    settings2Btn->SetBitmap(wxBitmap("bitmaps/rename.bmp",wxBITMAP_DEFAULT_TYPE));
+    settings2Btn->SetMaxSize(wxSize(35,35));
     
-    toolBar2->Add(addSeries2Btn, 0, wxLEFT , 5);
-    toolBar2->Add(removeSeries2Btn, 0, wxLEFT , 5);
-    toolBar2->Add(refreshSeries2Btn, 0, wxLEFT , 5);
-    toolBar2->Add(settings2Btn, 0, wxLEFT , 5);
+    toolBar2->Add(addSeries2Btn, 0, wxLEFT , 10);
+    toolBar2->Add(removeSeries2Btn, 0, wxLEFT , 3);
+    toolBar2->Add(refreshSeries2Btn, 0, wxLEFT , 3);
+    toolBar2->Add(settings2Btn, 0, wxLEFT , 3);
     
     toolBarContainer->Add(toolBar1);
     toolBarContainer->Add(toolBar2);

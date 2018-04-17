@@ -1,0 +1,118 @@
+toolsets = gnu vs2015 vs2013;
+
+gnu.makefile = ../../GNUmakefile;
+vs2015.solutionfile = ../msw/wxchartstests_vc14.sln;
+vs2013.solutionfile = ../msw/wxchartstests_vc12.sln;
+
+setting WXWIDGETS_ROOT
+{
+    help = "Path to the wxWidgets installation";
+    default = '$(WXWIN)';
+}
+
+setting WXCHARTS_ROOT
+{
+    help = "Path to the wxCharts installation";
+    default = '$(WXCHARTS)';
+}
+
+setting CPPUNIT_ROOT
+{
+    help = "Path to the CppUnit installation";
+    default = '$(CPPUNIT)';
+}
+
+program wxchartstests
+{
+    vs2015.projectfile = ../msw/wxchartstests_vc14.vcxproj;
+    vs2013.projectfile = ../msw/wxchartstests_vc12.vcxproj;
+ 
+    includedirs += $(WXCHARTS_ROOT)/include;
+    includedirs += $(CPPUNIT_ROOT)/include;
+    libdirs += $(WXCHARTS_ROOT)/lib/vc_lib;
+    libdirs += $(CPPUNIT_ROOT)/lib;
+
+    if (($(toolset) == vs2015) || ($(toolset) == vs2013))
+    {
+        win32-subsystem = windows;
+        
+        includedirs += $(WXWIDGETS_ROOT)/include;
+        includedirs += $(WXWIDGETS_ROOT)/include/msvc;
+        libdirs += $(WXWIDGETS_ROOT)/lib/vc_lib;
+
+        if ($(config) == Debug)
+        {
+            libs += cppunitd;
+        }
+        if ($(config) == Release)
+        {
+            libs += cppunit;
+        }
+    }
+    if ($(toolset) == gnu)
+    {
+        cxx-compiler-options = "`wx-config --cxxflags --libs`";
+        libs += cppunit;
+    }
+
+    headers
+    {
+        ../../src/wxchartstestsapp.h
+        ../../src/wxchartstestsframe.h
+        ../../src/wxchartstestsmenubar.h
+        ../../src/wxchartstestswindowids.h
+        ../../src/wxchartrectanglepanel.h
+        ../../src/wxchartlabelpanel.h
+        ../../src/wxchartlabelseriespanel.h
+        ../../src/wxchartcategoricalaxispanel.h
+        ../../src/wxchartnumericalaxispanel.h
+        ../../src/wxchartgridpanel.h
+        ../../src/wxareachartpanel.h
+        ../../src/wxbarchartpanel.h
+        ../../src/wxbubblechartpanel.h
+        ../../src/wxcandlestickchartpanel.h
+        ../../src/wxcolumnchartpanel.h
+        ../../src/wxpiechartpanel.h
+        ../../src/wxpolarareachartpanel.h
+        ../../src/elementcanvaswindow.h
+
+        ../../src/tests/testsuite.h
+        ../../src/tests/wxchartbackgroundoptionstests.h
+        ../../src/tests/wxchartfontoptionstests.h
+        ../../src/tests/wxchartlabeloptionstests.h
+        ../../src/tests/wxchartaxisoptionstests.h
+        ../../src/tests/wxchartgridoptionstests.h
+        ../../src/tests/wxcolumnchartoptionstests.h
+        ../../src/tests/wxpiechartoptionstests.h
+    }
+
+    sources
+    {
+        ../../src/wxchartstestsapp.cpp
+        ../../src/wxchartstestsframe.cpp
+        ../../src/wxchartstestsmenubar.cpp
+        ../../src/wxchartrectanglepanel.cpp
+        ../../src/wxchartlabelpanel.cpp
+        ../../src/wxchartlabelseriespanel.cpp
+        ../../src/wxchartcategoricalaxispanel.cpp
+        ../../src/wxchartnumericalaxispanel.cpp
+        ../../src/wxchartgridpanel.cpp
+        ../../src/wxareachartpanel.cpp
+        ../../src/wxbarchartpanel.cpp
+        ../../src/wxbubblechartpanel.cpp
+        ../../src/wxcandlestickchartpanel.cpp
+        ../../src/wxcolumnchartpanel.cpp
+        ../../src/wxpiechartpanel.cpp
+        ../../src/wxpolarareachartpanel.cpp
+        ../../src/elementcanvaswindow.cpp
+
+        ../../src/tests/testsuite.cpp
+        ../../src/tests/wxchartbackgroundoptionstests.cpp
+        ../../src/tests/wxchartfontoptionstests.cpp
+        ../../src/tests/wxchartlabeloptionstests.cpp
+        ../../src/tests/wxchartaxisoptionstests.cpp
+        ../../src/tests/wxchartgridoptionstests.cpp
+        ../../src/tests/wxcolumnchartoptionstests.cpp
+        ../../src/tests/wxpiechartoptionstests.cpp
+    }
+}
