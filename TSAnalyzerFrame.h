@@ -33,12 +33,17 @@ private:
 //    void OnExit(wxCommandEvent& event);
 //    void OnAbout(wxCommandEvent& event);
     void clearData(wxCommandEvent& event);
+    int test123();
     
     
-    wxPanel *panel;
-    wxLineChartCtrl* lineChartCtrl;
-    wxLineChartCtrl* lineChartSeries1Ctrl;
-    wxLineChartCtrl* lineChartSeries2Ctrl;
+    wxPanel * panel;
+    
+    wxFlexGridSizer * flexGrid;
+    wxBoxSizer * timeSeriesBar;
+    
+    wxLineChartCtrl * lineChartCtrl;
+    wxLineChartCtrl * lineChartSeries1Ctrl;
+    wxLineChartCtrl * lineChartSeries2Ctrl;
     
     wxLineChart * chart;
     

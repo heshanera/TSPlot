@@ -21,16 +21,18 @@ TSGenFrame::TSGenFrame() : wxFrame(NULL, -1, "TSAnalyser", wxPoint(-1, -1), wxSi
 int TSGenFrame::loadWidgets(){
     
     wxBoxSizer *hbox = new wxBoxSizer(wxHORIZONTAL);
-    wxFlexGridSizer *flexGrid = new wxFlexGridSizer(4, 1, 5, 25);
+    flexGrid = new wxFlexGridSizer(4, 1, 5, 25);
 
     wxFlexGridSizer *toolBar = new wxFlexGridSizer(1, 5, 0, 0);
     toolBar->AddGrowableCol(2, 1);
+    
+    int removeBtnId = wxWindow::NewControlId();
     
     wxButton *addSeriesBtn = new wxButton(panel, wxID_ANY);
     addSeriesBtn->SetBitmap(wxBitmap("bitmaps/add.bmp",wxBITMAP_DEFAULT_TYPE));
     addSeriesBtn->SetMaxSize(wxSize(45,45));
     
-    wxButton *removeSeriesBtn = new wxButton(panel, wxID_ANY);
+    wxButton *removeSeriesBtn = new wxButton(panel, removeBtnId);
     removeSeriesBtn->SetBitmap(wxBitmap("bitmaps/remove.bmp",wxBITMAP_DEFAULT_TYPE));
     removeSeriesBtn->SetMaxSize(wxSize(45,45));
     
@@ -48,7 +50,7 @@ int TSGenFrame::loadWidgets(){
     toolBar->AddSpacer(20);
     toolBar->Add(settingsBtn, 0);
     
-    wxBoxSizer *timeSeriesBar = new wxBoxSizer(wxHORIZONTAL);
+    timeSeriesBar = new wxBoxSizer(wxHORIZONTAL);
     timeSeriesBar->Add(lineChartSeries1Ctrl, 1, wxRIGHT | wxBOTTOM | wxEXPAND, 5);
     timeSeriesBar->Add(lineChartSeries2Ctrl, 1, wxLEFT | wxBOTTOM | wxEXPAND, 5);
     
@@ -65,9 +67,17 @@ int TSGenFrame::loadWidgets(){
     panel->SetSizer(hbox);
     Centre();
     
-    Bind(wxEVT_BUTTON, &TSGenFrame::clearData, this, wxID_ANY);
+    Bind(wxEVT_BUTTON, &TSGenFrame::clearData, this, removeBtnId);
     
     return 0;    
+}
+
+int TSGenFrame::test123() {
+    
+    
+//    flexGrid->Add(lineChartCtrl, 1, wxEXPAND);
+    
+    return 0;
 }
 
 int TSGenFrame::loadTimeSeriesData(
@@ -88,16 +98,16 @@ int TSGenFrame::loadTimeSeriesData(
     lineChartCtrl = new wxLineChartCtrl(
         panel, wxID_ANY, 
         chartData, wxDefaultPosition, 
-        wxDefaultSize, wxBORDER_RAISED
+        wxDefaultSize, wxBORDER_THEME
     );    
-
+    
     wxSize * size;
     size = new wxSize(-1,30);
     // Create the legend widget
     legendCtrl = new ChartLegendBox(
         panel, wxID_ANY, 
         legendData, wxDefaultPosition, 
-        *size, wxBORDER_RAISED
+        *size, wxBORDER_THEME
     );
     
     //////////////////////////////////////////////////
@@ -109,7 +119,7 @@ int TSGenFrame::loadTimeSeriesData(
     lineChartSeries1Ctrl = new wxLineChartCtrl(
         panel, wxID_ANY, 
         chartData1, wxDefaultPosition, 
-        wxDefaultSize, wxBORDER_RAISED
+        wxDefaultSize, wxBORDER_THEME
     );
     
     ///////////////////////////////////////////////////
@@ -121,7 +131,7 @@ int TSGenFrame::loadTimeSeriesData(
     lineChartSeries2Ctrl = new wxLineChartCtrl(
         panel, wxID_ANY, 
         chartData2, wxDefaultPosition, 
-        wxDefaultSize, wxBORDER_RAISED
+        wxDefaultSize, wxBORDER_THEME
     );
     
     ////////////////////////////////////////////////////
@@ -148,15 +158,27 @@ void TSGenFrame::clearData(wxCommandEvent& event) {
     wxVector<wxString> labels;
     labels.push_back("");    
     wxVector<wxDouble> points1;
-    points1.push_back(0);
     wxVector<wxDouble> points2;
-    points2.push_back(0);
+     
+    
+    lineChartCtrl->Destroy();
+    legendCtrl->Destroy();
+    lineChartSeries1Ctrl->Destroy();
+    lineChartSeries2Ctrl->Destroy();
+    
+//    flexGrid->Detach(lineChartCtrl);
+//    flexGrid->Detach(legendCtrl);
+    
     loadTimeSeriesData(labels, "-", points1, "-", points2);
-//    lineChartCtrl->Refresh();
-//    
-//    this->Refresh();
-    lineChartCtrl->Refresh();
-    lineChartCtrl->Update();
+    
+    timeSeriesBar->Add(lineChartSeries1Ctrl, 1, wxRIGHT | wxBOTTOM | wxEXPAND, 5);
+    timeSeriesBar->Add(lineChartSeries2Ctrl, 1, wxLEFT | wxBOTTOM | wxEXPAND, 5);
+    flexGrid->Add(lineChartCtrl, 1, wxEXPAND);
+    flexGrid->Add(legendCtrl, 1, wxEXPAND);
+
+    panel->Layout();
+    panel->Refresh();
+    panel->Update();
 }
 
 wxBEGIN_EVENT_TABLE(TSGenFrame, wxFrame)
