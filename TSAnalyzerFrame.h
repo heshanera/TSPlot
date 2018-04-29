@@ -13,6 +13,7 @@
     #include <wx/wx.h>
 #endif
 #include <wx/charts/wxcharts.h>
+#include <wx/spinctrl.h>
 #include "ChartLegendBox.h"
 
 class TSGenFrame : public wxFrame
@@ -52,6 +53,7 @@ private:
     void refreshData2(wxCommandEvent& event);
     void renameData2(wxCommandEvent& event);
     
+    void refreshBoth(wxCommandEvent& event);
     
     wxPanel * panel;
     
@@ -67,6 +69,10 @@ private:
     ChartLegendBox* legendCtrl;
     
     wxVector<wxString> labels;
+    
+    wxVector<wxString> labels1;
+    wxVector<wxString> labels2;
+    
     wxVector<wxDouble> points1;
     wxVector<wxDouble> points2;
     
@@ -77,6 +83,23 @@ private:
     std::string dataset2Name;
     
     int maxPoints;
+    int maxPointsS1;
+    int maxPointsS2;
+    
+    int minPointsS1;
+    int minPointsS2;
+    
+//    wxSpinCtrl * series1Spin1;
+//    wxSpinCtrl * series1Spin2;
+//    wxSpinCtrl * series2Spin1;
+//    wxSpinCtrl * series2Spin2;
+    
+    wxButton * refreshBothBtn;
+    wxFlexGridSizer * timeWindowContainer;
+    wxSpinCtrl * seriesSpin1;
+    wxSpinCtrl * seriesSpin2;
+    
+    wxStaticText * seriesLable;
 
     wxDECLARE_EVENT_TABLE();
     
@@ -91,6 +114,7 @@ enum
     CLEAR_BUTTON_2 = 6,
     REFRESH_BUTTON_2 = 7,
     RENAME_BUTTON_2 = 8,
+    REFRESH_BUTTON_3 = 9,
 };
 
 #endif /* TSGEN_H */

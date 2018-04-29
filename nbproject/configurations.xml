@@ -44,6 +44,8 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <standard>11</standard>
+          <commandlineTool>g++</commandlineTool>
           <incDir>
             <pElem>/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include</pElem>
           </incDir>
