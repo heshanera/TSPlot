@@ -1,2 +1,2 @@
-# TSGen
-time series generator
+# TSPlot
+application to compare univariate temporal sequences

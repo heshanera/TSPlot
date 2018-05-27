@@ -20,7 +20,7 @@
 #include <wx/filedlg.h> 
 #include <wx/string.h>
 
-TSPlotFrame::TSPlotFrame() : wxFrame(NULL, wxID_ANY, "TSAnalyser", wxPoint(-1, -1), wxSize(950, 600)) {
+TSPlotFrame::TSPlotFrame() : wxFrame(NULL, wxID_ANY, "TSPlot", wxPoint(-1, -1), wxSize(950, 600)) {
     panel = new wxPanel(this, -1);
     maxPoints = 2000;
     maxPointsS1 = 0;
