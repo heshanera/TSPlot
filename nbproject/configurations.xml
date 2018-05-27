@@ -8,6 +8,7 @@
       <itemPath>TSAnalyzer.h</itemPath>
       <itemPath>TSAnalyzerFrame.h</itemPath>
       <itemPath>TimeSeries.h</itemPath>
+      <itemPath>TimeSeriesCtrl.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -20,6 +21,7 @@
       <itemPath>TSAnalyzer.cpp</itemPath>
       <itemPath>TSAnalyzerFrame.cpp</itemPath>
       <itemPath>TimeSeries.cpp</itemPath>
+      <itemPath>TimeSeriesCtrl.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -43,6 +45,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <standard>10</standard>
+        </cTool>
         <ccTool>
           <standard>11</standard>
           <commandlineTool>g++</commandlineTool>
@@ -73,6 +78,10 @@
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TimeSeries.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TimeSeriesCtrl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TimeSeriesCtrl.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -112,6 +121,10 @@
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="TimeSeries.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TimeSeriesCtrl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TimeSeriesCtrl.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

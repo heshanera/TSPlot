@@ -20,9 +20,9 @@
 #include <wx/filedlg.h> 
 #include <wx/string.h>
 
-TSGenFrame::TSGenFrame() : wxFrame(NULL, -1, "TSAnalyser", wxPoint(-1, -1), wxSize(950, 600)) {
+TSGenFrame::TSGenFrame() : wxFrame(NULL, wxID_ANY, "TSAnalyser", wxPoint(-1, -1), wxSize(950, 600)) {
     panel = new wxPanel(this, -1);
-    maxPoints = 1000;
+    maxPoints = 2000;
     maxPointsS1 = 0;
     maxPointsS2 = 0;
     
@@ -31,6 +31,82 @@ TSGenFrame::TSGenFrame() : wxFrame(NULL, -1, "TSAnalyser", wxPoint(-1, -1), wxSi
     
     dataset1Name = "";
     dataset2Name = "";
+    
+    /*****************************************************************************************/
+//    // Create a top-level panel to hold all the contents of the frame
+//    wxPanel* panel = new wxPanel(this, wxID_ANY, wxPoint(-1, -1), wxSize(950, 600));
+//
+//    // Create the data for the scatter plot widget
+//    wxScatterPlotData chartData;
+//
+//    // Add the first dataset
+//    wxVector<wxPoint2DDouble> points1;
+//    wxVector<wxPoint2DDouble> points2;
+//    
+//    std::string fileName = "../LSTM/datasets/multiResults.txt";
+//    std::string line;
+//    std::ifstream file (fileName);
+//    std::string token;
+//    double margin;
+//    
+//    int tokenNo = 0;
+//    if (file.is_open()) {
+//        int i = 0;
+//        while ( getline (file,line) ) {
+//            i++;
+//            if ( i%10 != 0) continue;
+//            try{
+//                std::stringstream ss(line);
+//                tokenNo = 0;
+//                while(std::getline(ss, token, ',')) {
+//                    if (tokenNo == 0) {
+//                        margin = std::stod(token);
+//                    } else if (tokenNo == 1) {
+//                        
+//                        if (margin == 1) points1.push_back(wxPoint2DDouble(i, std::stod(token)));
+//                        else if (margin == 0) points2.push_back(wxPoint2DDouble(i, std::stod(token)));
+//                    }
+//                    tokenNo++;
+//                }
+//            } catch (std::exception& e) {
+//                std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+//            }    
+////            if ( i == 1000 ) break; 
+//            
+//        }
+//        file.close();
+//    }
+//    else std::cout << "Unable to open file '"<<fileName<<"'";
+//    
+//    wxScatterPlotDataset::ptr dataset1(
+//        new wxScatterPlotDataset(
+//            wxColor(250, 20, 20, 0x78),
+//            wxColor(250, 20, 20, 0xB8),
+//            points1)
+//        );
+//    chartData.AddDataset(dataset1);
+//
+//    wxScatterPlotDataset::ptr dataset2(
+//        new wxScatterPlotDataset(
+//            wxColor(20, 20, 20, 0x78),
+//            wxColor(20, 20, 20, 0xB8),
+//            points2)
+//        );
+//    chartData.AddDataset(dataset2);
+//
+//    // Create the scatter plot widget
+//    wxScatterPlotCtrl* scatterPlotCtrl = new wxScatterPlotCtrl(panel, wxID_ANY, chartData);
+//
+//    // Set up the sizer for the panel
+//    wxBoxSizer* panelSizer = new wxBoxSizer(wxHORIZONTAL);
+//    panelSizer->Add(scatterPlotCtrl, 1, wxEXPAND);
+//    panel->SetSizer(panelSizer);
+//
+//    // Set up the sizer for the frame
+//    wxBoxSizer* topSizer = new wxBoxSizer(wxHORIZONTAL);
+//    topSizer->Add(panel, 1, wxEXPAND);
+//    SetSizerAndFit(topSizer);
+    
 }
 
 int TSGenFrame::loadWidgets(){
@@ -259,12 +335,15 @@ void TSGenFrame::addData1(wxCommandEvent& event) {
         if (file.is_open()) {
             int i = 0;
             while ( getline (file,line) ) {
-                i++;
-                points1.push_back(std::stod(line));
-                if (i == maxPoints) break;
+                try {
+                    i++;
+                    points1.push_back(std::stod(line)); 
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }    
             }
             maxPointsS1 = i;
-            std::cout<<maxPointsS1;
             file.close();
         }
         else std::cout << "Unable to open file '"<<filename<<"'";
@@ -326,6 +405,14 @@ void TSGenFrame::addData1(wxCommandEvent& event) {
         timeSeriesBar->Add(lineChartSeries2Ctrl, 1, wxRIGHT | wxBOTTOM | wxEXPAND, 5);
         flexGrid->Add(lineChartCtrl, 1, wxEXPAND);
         flexGrid->Add(timeWindowContainer, 1, wxEXPAND);
+        
+        TimeSeries *timeSeries2 = new TimeSeries();
+        wxLineChartData chartData2 = timeSeries2->load(labels, dataset1Name, points1, dataset2Name, points2);
+//        lineChartCtrl->updateChart(
+//            panel, wxID_ANY, 
+//            chartData2, wxDefaultPosition, 
+//            wxDefaultSize, wxBORDER_NONE
+//        );
 
         panel->Layout();
         panel->Refresh();
@@ -400,11 +487,15 @@ void TSGenFrame::refreshData1(wxCommandEvent& event) {
         if (file.is_open()) {
             int i = 0;
             while ( getline (file,line) ) {
-                if (( i >= min) && ( i <= max)) {
-                    points1.push_back(std::stod(line));
-                }    
-                i++;
-                if (i == maxPoints) break;
+                try {
+                    if (( i >= min) && ( i <= max)) {
+                        points1.push_back(std::stod(line));
+                    }    
+                    i++;
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }
             }
             maxPointsS1 = i;
             file.close();
@@ -520,9 +611,13 @@ void TSGenFrame::addData2(wxCommandEvent& event) {
         if (file.is_open()) {
             int i = 0;
             while ( getline (file,line) ) {
-                i++;
-                points2.push_back(std::stod(line));
-                if (i == maxPoints) break;
+                try {
+                    i++;
+                    points2.push_back(std::stod(line));
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }
             }
             maxPointsS2 = i;
             file.close();
@@ -659,11 +754,15 @@ void TSGenFrame::refreshData2(wxCommandEvent& event) {
         if (file.is_open()) {
             int i = 0;
             while ( getline (file,line) ) {
-                if (( i >= min) && ( i <= max)) {
-                    points2.push_back(std::stod(line));
-                }    
-                i++;
-                if (i == maxPoints) break;
+                try {
+                    if (( i >= min) && ( i <= max)) {
+                        points2.push_back(std::stod(line));
+                    }    
+                    i++;
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }
             }
             maxPointsS2 = i;
             file.close();
@@ -773,11 +872,15 @@ void TSGenFrame::refreshBoth(wxCommandEvent& event) {
         if (file.is_open()) {
             int i = 0;
             while ( getline (file,line) ) {
-                if (( i >= min) && ( i <= max)) {
-                    points2.push_back(std::stod(line));
-                }    
-                i++;
-                if (i == maxPoints) break;
+                try {
+                    if (( i >= min) && ( i <= max)) {
+                        points2.push_back(std::stod(line));
+                    }    
+                    i++;
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }
             }
             maxPointsS2 = i;
             file.close();
@@ -790,11 +893,15 @@ void TSGenFrame::refreshBoth(wxCommandEvent& event) {
         if (file2.is_open()) {
             int i = 0;
             while ( getline (file2,line) ) {
-                if (( i >= min) && ( i <= max)) {
-                    points1.push_back(std::stod(line));
-                }    
-                i++;
-                if (i == maxPoints) break;
+                try {
+                    if (( i >= min) && ( i <= max)) {
+                        points1.push_back(std::stod(line));
+                    }    
+                    i++;
+                    if (i == maxPoints) break;
+                } catch (std::exception& e) {
+                    std::cout<<std::endl<<"Error in line "<<i<<": "<<e.what()<<std::endl;
+                }
             }
             maxPointsS1 = i;
             file2.close();

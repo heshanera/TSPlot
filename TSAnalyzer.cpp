@@ -92,4 +92,7 @@ bool TSGen::OnInit() {
     frame->loadWidgets();
     frame->Show(true); 
     return true;
+    
+    
+    
 }

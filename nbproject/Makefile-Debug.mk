@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/TSAnalyzer.o \
 	${OBJECTDIR}/TSAnalyzerFrame.o \
 	${OBJECTDIR}/TimeSeries.o \
+	${OBJECTDIR}/TimeSeriesCtrl.o \
 	${OBJECTDIR}/main.o
 
 
@@ -87,6 +88,11 @@ ${OBJECTDIR}/TimeSeries.o: TimeSeries.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
+
+${OBJECTDIR}/TimeSeriesCtrl.o: TimeSeriesCtrl.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeriesCtrl.o TimeSeriesCtrl.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
