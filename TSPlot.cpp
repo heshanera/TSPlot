@@ -1,5 +1,5 @@
 /* 
- * File:   TSGen.cpp
+ * File:   TSPlot.cpp
  * Author: heshan
  * 
  * Created on April 1, 2018, 9:33 PM
@@ -8,11 +8,11 @@
 #include <fstream>
 #include <sstream>
 #include <iomanip>
-#include "TSAnalyzer.h"
+#include "TSPlot.h"
 #include "TimeSeries.h"
 
-bool TSGen::OnInit() {
-    TSGenFrame *frame = new TSGenFrame();
+bool TSPlot::OnInit() {
+    TSPlotFrame *frame = new TSPlotFrame();
     
 //    wxVector<wxString> labels;
 //    float val = 0;

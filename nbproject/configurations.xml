@@ -5,8 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>ChartLegendBox.h</itemPath>
-      <itemPath>TSAnalyzer.h</itemPath>
-      <itemPath>TSAnalyzerFrame.h</itemPath>
+      <itemPath>TSPlot.h</itemPath>
+      <itemPath>TSPlotFrame.h</itemPath>
       <itemPath>TimeSeries.h</itemPath>
       <itemPath>TimeSeriesCtrl.h</itemPath>
     </logicalFolder>
@@ -18,8 +18,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>ChartLegendBox.cpp</itemPath>
-      <itemPath>TSAnalyzer.cpp</itemPath>
-      <itemPath>TSAnalyzerFrame.cpp</itemPath>
+      <itemPath>TSPlot.cpp</itemPath>
+      <itemPath>TSPlotFrame.cpp</itemPath>
       <itemPath>TimeSeries.cpp</itemPath>
       <itemPath>TimeSeriesCtrl.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -52,7 +52,7 @@
           <standard>11</standard>
           <commandlineTool>g++</commandlineTool>
           <incDir>
-            <pElem>/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include</pElem>
+            <pElem>/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include</pElem>
           </incDir>
           <commandLine>`wx-config --cxxflags`</commandLine>
         </ccTool>
@@ -67,13 +67,13 @@
       </item>
       <item path="ChartLegendBox.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSAnalyzer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSAnalyzer.h" ex="false" tool="3" flavor2="0">
+      <item path="TSPlot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSAnalyzerFrame.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSPlotFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSAnalyzerFrame.h" ex="false" tool="3" flavor2="0">
+      <item path="TSPlotFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -110,13 +110,13 @@
       </item>
       <item path="ChartLegendBox.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSAnalyzer.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSPlot.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSAnalyzer.h" ex="false" tool="3" flavor2="0">
+      <item path="TSPlot.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="TSAnalyzerFrame.cpp" ex="false" tool="1" flavor2="0">
+      <item path="TSPlotFrame.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="TSAnalyzerFrame.h" ex="false" tool="3" flavor2="0">
+      <item path="TSPlotFrame.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="TimeSeries.cpp" ex="false" tool="1" flavor2="0">
       </item>

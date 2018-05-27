@@ -1,12 +1,12 @@
 /* 
- * File:   TSGen.h
+ * File:   TSPlotFrame.h
  * Author: heshan
  *
  * Created on April 1, 2018, 9:13 PM
  */
 
-#ifndef TSGEN_H
-#define TSGEN_H
+#ifndef TSPLOTFRAME_H
+#define TSPLOTFRAME_H
 
 #include <wx/wxprec.h>
 #ifndef WX_PRECOMP
@@ -16,10 +16,10 @@
 #include <wx/spinctrl.h>
 #include "ChartLegendBox.h"
 
-class TSGenFrame : public wxFrame
+class TSPlotFrame : public wxFrame
 {
 public:
-    TSGenFrame();
+    TSPlotFrame();
     int loadWidgets();
     int loadTimeSeriesData(
         wxVector<wxString> labels, 
@@ -117,5 +117,5 @@ enum
     REFRESH_BUTTON_3 = 9,
 };
 
-#endif /* TSGEN_H */
+#endif /* TSPLOTFRAME_H */
 

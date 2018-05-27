@@ -36,8 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/ChartLegendBox.o \
-	${OBJECTDIR}/TSAnalyzer.o \
-	${OBJECTDIR}/TSAnalyzerFrame.o \
+	${OBJECTDIR}/TSPlot.o \
+	${OBJECTDIR}/TSPlotFrame.o \
 	${OBJECTDIR}/TimeSeries.o \
 	${OBJECTDIR}/TimeSeriesCtrl.o \
 	${OBJECTDIR}/main.o
@@ -61,26 +61,26 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/ChartLegendBox.o: ChartLegendBox.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
 
-${OBJECTDIR}/TSAnalyzer.o: TSAnalyzer.cpp
+${OBJECTDIR}/TSPlot.o: TSPlot.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzer.o TSAnalyzer.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSPlot.o TSPlot.cpp
 
-${OBJECTDIR}/TSAnalyzerFrame.o: TSAnalyzerFrame.cpp
+${OBJECTDIR}/TSPlotFrame.o: TSPlotFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzerFrame.o TSAnalyzerFrame.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSPlotFrame.o TSPlotFrame.cpp
 
 ${OBJECTDIR}/TimeSeries.o: TimeSeries.cpp
 	${MKDIR} -p ${OBJECTDIR}

@@ -36,8 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/ChartLegendBox.o \
-	${OBJECTDIR}/TSAnalyzer.o \
-	${OBJECTDIR}/TSAnalyzerFrame.o \
+	${OBJECTDIR}/TSPlot.o \
+	${OBJECTDIR}/TSPlotFrame.o \
 	${OBJECTDIR}/TimeSeries.o \
 	${OBJECTDIR}/TimeSeriesCtrl.o \
 	${OBJECTDIR}/main.o
@@ -61,43 +61,43 @@ LDLIBSOPTIONS=wxCharts/libwxcharts.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: wxCharts/libwxcharts.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot: wxCharts/libwxcharts.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsanalyzer ${OBJECTFILES} ${LDLIBSOPTIONS} `wx-config --libs`
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tsplot ${OBJECTFILES} ${LDLIBSOPTIONS} `wx-config --libs`
 
 ${OBJECTDIR}/ChartLegendBox.o: ChartLegendBox.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ChartLegendBox.o ChartLegendBox.cpp
 
-${OBJECTDIR}/TSAnalyzer.o: TSAnalyzer.cpp
+${OBJECTDIR}/TSPlot.o: TSPlot.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzer.o TSAnalyzer.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSPlot.o TSPlot.cpp
 
-${OBJECTDIR}/TSAnalyzerFrame.o: TSAnalyzerFrame.cpp
+${OBJECTDIR}/TSPlotFrame.o: TSPlotFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSAnalyzerFrame.o TSAnalyzerFrame.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TSPlotFrame.o TSPlotFrame.cpp
 
 ${OBJECTDIR}/TimeSeries.o: TimeSeries.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeries.o TimeSeries.cpp
 
 ${OBJECTDIR}/TimeSeriesCtrl.o: TimeSeriesCtrl.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeriesCtrl.o TimeSeriesCtrl.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TimeSeriesCtrl.o TimeSeriesCtrl.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSAnalyzer/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/home/heshan/Projects/NetBeansProjects/TSPlot/wxCharts/include -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

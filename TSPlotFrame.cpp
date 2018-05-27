@@ -1,5 +1,5 @@
 /* 
- * File:   TSGen.cpp
+ * File:   TSPlotFrame.cpp
  * Author: heshan
  * 
  * Created on April 1, 2018, 9:13 PM
@@ -9,10 +9,10 @@
 #include <sstream>
 #include <iomanip>
 
-#include "TSAnalyzerFrame.h"
+#include "TSPlotFrame.h"
 #include "TimeSeries.h"
 #include "ChartLegendBox.h"
-#include "TSAnalyzer.h"
+#include "TSPlot.h"
 
 #include <wx/sizer.h>
 #include <wx/grid.h>
@@ -20,7 +20,7 @@
 #include <wx/filedlg.h> 
 #include <wx/string.h>
 
-TSGenFrame::TSGenFrame() : wxFrame(NULL, wxID_ANY, "TSAnalyser", wxPoint(-1, -1), wxSize(950, 600)) {
+TSPlotFrame::TSPlotFrame() : wxFrame(NULL, wxID_ANY, "TSAnalyser", wxPoint(-1, -1), wxSize(950, 600)) {
     panel = new wxPanel(this, -1);
     maxPoints = 2000;
     maxPointsS1 = 0;
@@ -109,7 +109,7 @@ TSGenFrame::TSGenFrame() : wxFrame(NULL, wxID_ANY, "TSAnalyser", wxPoint(-1, -1)
     
 }
 
-int TSGenFrame::loadWidgets(){
+int TSPlotFrame::loadWidgets(){
     
     wxBoxSizer *hbox = new wxBoxSizer(wxHORIZONTAL);
     flexGrid = new wxFlexGridSizer(4, 1, 5, 25);
@@ -216,22 +216,22 @@ int TSGenFrame::loadWidgets(){
     panel->SetSizer(hbox);
     Centre();
     
-    Bind(wxEVT_BUTTON, &TSGenFrame::addData1, this, ADD_BUTTON_1);
-    Bind(wxEVT_BUTTON, &TSGenFrame::clearData1, this, CLEAR_BUTTON_1);
-    Bind(wxEVT_BUTTON, &TSGenFrame::refreshData1, this, REFRESH_BUTTON_1);
-    Bind(wxEVT_BUTTON, &TSGenFrame::renameData1, this, RENAME_BUTTON_1);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::addData1, this, ADD_BUTTON_1);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::clearData1, this, CLEAR_BUTTON_1);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::refreshData1, this, REFRESH_BUTTON_1);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::renameData1, this, RENAME_BUTTON_1);
     
-    Bind(wxEVT_BUTTON, &TSGenFrame::addData2, this, ADD_BUTTON_2);
-    Bind(wxEVT_BUTTON, &TSGenFrame::clearData2, this, CLEAR_BUTTON_2);
-    Bind(wxEVT_BUTTON, &TSGenFrame::refreshData2, this, REFRESH_BUTTON_2);
-    Bind(wxEVT_BUTTON, &TSGenFrame::renameData2, this, RENAME_BUTTON_2);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::addData2, this, ADD_BUTTON_2);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::clearData2, this, CLEAR_BUTTON_2);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::refreshData2, this, REFRESH_BUTTON_2);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::renameData2, this, RENAME_BUTTON_2);
     
-    Bind(wxEVT_BUTTON, &TSGenFrame::refreshBoth, this, REFRESH_BUTTON_3);
+    Bind(wxEVT_BUTTON, &TSPlotFrame::refreshBoth, this, REFRESH_BUTTON_3);
     
     return 0;    
 }
 
-int TSGenFrame::loadTimeSeriesData(
+int TSPlotFrame::loadTimeSeriesData(
     wxVector<wxString> labels, 
     std::string series1Name, 
     wxVector<wxDouble> points1, 
@@ -264,7 +264,7 @@ int TSGenFrame::loadTimeSeriesData(
     return 0;
 }
 
-int TSGenFrame::loadTimeSeriesData1(
+int TSPlotFrame::loadTimeSeriesData1(
     wxVector<wxString> labels, 
     std::string series1Name, 
     wxVector<wxDouble> points1
@@ -285,7 +285,7 @@ int TSGenFrame::loadTimeSeriesData1(
     return 0;
 }
 
-int TSGenFrame::loadTimeSeriesData2(
+int TSPlotFrame::loadTimeSeriesData2(
     wxVector<wxString> labels,  
     std::string series2Name, 
     wxVector<wxDouble> points2
@@ -306,20 +306,20 @@ int TSGenFrame::loadTimeSeriesData2(
     return 0;
 }
 
-//void TSGenFrame::OnExit(wxCommandEvent& event) {
+//void TSPlotFrame::OnExit(wxCommandEvent& event) {
 //    Close(true);
 //}
 //
-//void TSGenFrame::OnAbout(wxCommandEvent& event) {
+//void TSPlotFrame::OnAbout(wxCommandEvent& event) {
 //    wxMessageBox("This is a wxWidgets Hello World example",
 //                 "About Hello World", wxOK | wxICON_INFORMATION);
 //}
 //
-//void TSGenFrame::OnHello(wxCommandEvent& event) {
+//void TSPlotFrame::OnHello(wxCommandEvent& event) {
 //    wxLogMessage("Hello world from wxWidgets!");
 //}
 
-void TSGenFrame::addData1(wxCommandEvent& event) {
+void TSPlotFrame::addData1(wxCommandEvent& event) {
     std::cout<<"add new data series...!"<<"\n";
     wxString fileTypes = "*.txt";
     
@@ -421,7 +421,7 @@ void TSGenFrame::addData1(wxCommandEvent& event) {
     }   
 }
 
-void TSGenFrame::clearData1(wxCommandEvent& event) {
+void TSPlotFrame::clearData1(wxCommandEvent& event) {
     std::cout<<"data series cleared"<<"\n";
     
     dataset1Name = "-";
@@ -472,7 +472,7 @@ void TSGenFrame::clearData1(wxCommandEvent& event) {
     panel->Update();
 }
 
-void TSGenFrame::refreshData1(wxCommandEvent& event) {
+void TSPlotFrame::refreshData1(wxCommandEvent& event) {
     std::cout<<"refresh data series...!"<<"\n";
     
     int min = minPointsS1;
@@ -555,7 +555,7 @@ void TSGenFrame::refreshData1(wxCommandEvent& event) {
     }   
 }
 
-void TSGenFrame::renameData1(wxCommandEvent& event) {
+void TSPlotFrame::renameData1(wxCommandEvent& event) {
     std::cout<<"data series renamed"<<"\n";
     
     wxString seriesName = wxGetTextFromUser("Enter time series name");
@@ -595,7 +595,7 @@ void TSGenFrame::renameData1(wxCommandEvent& event) {
     
 }
 
-void TSGenFrame::addData2(wxCommandEvent& event) {
+void TSPlotFrame::addData2(wxCommandEvent& event) {
     std::cout<<"add new data series...!"<<"\n";
     wxString fileTypes = "*.txt";
     
@@ -689,7 +689,7 @@ void TSGenFrame::addData2(wxCommandEvent& event) {
     
 }
 
-void TSGenFrame::clearData2(wxCommandEvent& event) {
+void TSPlotFrame::clearData2(wxCommandEvent& event) {
     std::cout<<"data series cleared"<<"\n";
     
     dataset2Name = "-";
@@ -740,7 +740,7 @@ void TSGenFrame::clearData2(wxCommandEvent& event) {
     panel->Update();
 }
 
-void TSGenFrame::refreshData2(wxCommandEvent& event) {
+void TSPlotFrame::refreshData2(wxCommandEvent& event) {
     std::cout<<"refresh data series...!"<<"\n";
     
     int min = minPointsS2;
@@ -818,7 +818,7 @@ void TSGenFrame::refreshData2(wxCommandEvent& event) {
     }   
 }
 
-void TSGenFrame::renameData2(wxCommandEvent& event) {
+void TSPlotFrame::renameData2(wxCommandEvent& event) {
     std::cout<<"data series renamed"<<"\n";
     
     wxString seriesName = wxGetTextFromUser("Enter time series name");
@@ -858,7 +858,7 @@ void TSGenFrame::renameData2(wxCommandEvent& event) {
     
 }
 
-void TSGenFrame::refreshBoth(wxCommandEvent& event) {
+void TSPlotFrame::refreshBoth(wxCommandEvent& event) {
     std::cout<<"refresh data series...!"<<"\n";
     
     int min = seriesSpin1->GetValue();
@@ -952,14 +952,14 @@ void TSGenFrame::refreshBoth(wxCommandEvent& event) {
     }   
 }
 
-wxBEGIN_EVENT_TABLE(TSGenFrame, wxFrame)
-    EVT_BUTTON(ADD_BUTTON_1, TSGenFrame::addData1)    
-    EVT_BUTTON(CLEAR_BUTTON_1, TSGenFrame::clearData1)
-    EVT_BUTTON(REFRESH_BUTTON_1, TSGenFrame::refreshData1)
-    EVT_BUTTON(RENAME_BUTTON_1, TSGenFrame::renameData1)    
-    EVT_BUTTON(ADD_BUTTON_2, TSGenFrame::addData2)    
-    EVT_BUTTON(CLEAR_BUTTON_2, TSGenFrame::clearData2)    
-    EVT_BUTTON(REFRESH_BUTTON_2, TSGenFrame::refreshData2)   
-    EVT_BUTTON(RENAME_BUTTON_2, TSGenFrame::renameData2)
-    EVT_BUTTON(REFRESH_BUTTON_3, TSGenFrame::refreshBoth)    
+wxBEGIN_EVENT_TABLE(TSPlotFrame, wxFrame)
+    EVT_BUTTON(ADD_BUTTON_1, TSPlotFrame::addData1)    
+    EVT_BUTTON(CLEAR_BUTTON_1, TSPlotFrame::clearData1)
+    EVT_BUTTON(REFRESH_BUTTON_1, TSPlotFrame::refreshData1)
+    EVT_BUTTON(RENAME_BUTTON_1, TSPlotFrame::renameData1)    
+    EVT_BUTTON(ADD_BUTTON_2, TSPlotFrame::addData2)    
+    EVT_BUTTON(CLEAR_BUTTON_2, TSPlotFrame::clearData2)    
+    EVT_BUTTON(REFRESH_BUTTON_2, TSPlotFrame::refreshData2)   
+    EVT_BUTTON(RENAME_BUTTON_2, TSPlotFrame::renameData2)
+    EVT_BUTTON(REFRESH_BUTTON_3, TSPlotFrame::refreshBoth)    
 wxEND_EVENT_TABLE()

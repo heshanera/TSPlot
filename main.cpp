@@ -5,16 +5,7 @@
  * Created on April 1, 2018, 2:34 PM
  */
 
-#include "TSAnalyzer.h"
+#include "TSPlot.h"
 
-wxIMPLEMENT_APP(TSGen);
+wxIMPLEMENT_APP(TSPlot);
     
-
-/*
- * 
- */
-//int main(int argc, char** argv) {
-//
-//    return 0;
-//}
-
